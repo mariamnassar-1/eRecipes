@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Recipe
+{% endblock %}
+
+{% block body %}
+
+    <p> Add your recipe details: </p>
+
+    <form class="row g-3" method="post" enctype="multipart/form-data" action="{{ url_for('addrecipe') }}">
+        
+        <div class="col-12">
+            <label for="inputName" class="form-label">Recipe Name</label>
+            <input name="name" type="text" class="form-control" id="inputAddress" placeholder="Name">
+        </div>
+        
+        <!-- ingredients + steps -->
+        <div id="ingredients-container">
+            <div class="col-12">
+                <label for="inputIngredients" class="form-label">Ingredients</label>
+                <div id="ingredient-fields">
+                    <!-- Dynamically added ingredient fields will go here -->
+                </div>
+                <button type="button" class="btn btn-outline-success my-2 my-sm-0" onclick="addIngredientField()">Add Ingredient</button>
+            </div>
+            
+        </div>
+
+        <div class="col-12">
+            <div id="steps-container">
+                <label for="inputSteps" class="form-label">Steps</label>
+                <div id="step-fields">
+                    <!-- Dynamically added step fields will go here -->
+                </div>
+                <button type="button" class="btn btn-outline-success my-2 my-sm-0" onclick="addStepField()">Add Step</button>
+            </div>
+        </div>
+
+        <!-- creating ingredients list and steps list -->
+        <script>
+            function addIngredientField() 
+            {
+            var container = document.getElementById("ingredient-fields");
+
+            var newIngredientDiv = document.createElement("div");
+
+            var newIngredientInput = document.createElement("input");
+            newIngredientInput.type = "text";
+            newIngredientInput.name = "ingredients[]";
+            newIngredientInput.placeholder = "Ingredient";
+            newIngredientDiv.appendChild(newIngredientInput);
+            
+            var newAmountLabel = document.createElement("label");
+            newAmountLabel.textContent = ", amount: ";
+            newIngredientDiv.appendChild(newAmountLabel);
+
+            var newAmountInput = document.createElement("input");
+            newAmountInput.type = "text";
+            newAmountInput.name = "amounts[]";
+            newAmountInput.placeholder = "2 cups, 200 grams, ..";
+            newIngredientDiv.appendChild(newAmountInput);
+
+            container.appendChild(newIngredientDiv);
+        }
+
+        function addStepField() 
+        {
+            var container = document.getElementById("step-fields");
+            var newInput = document.createElement("textarea");
+            newInput.name = "steps[]";
+            container.appendChild(newInput);
+        }
+
+        </script>
+        
+        <div class="col-12">
+            <label for="inputType" class="form-label">Meal Type</label>
+            <select name="meal_type" id="inputType" class="form-select">
+                <option selected>Choose...</option>
+                <option>Breakfast</option>
+                <option>Lunch</option>
+                <option>Dinner</option>
+                <option>Dessert</option>
+                <option>Snack</option>
+            </select>
+        </div>
+
+        <div class="col-12">
+            <label for="inputCook" class="form-label">Cooking Method</label>
+            <select name="cook" id="inputCook" class="form-select">
+                <option selected>Choose...</option>
+                <option>Baking</option>
+                <option>Cooking</option>
+                <option>No-cook</option>
+            </select>
+        </div>
+        
+        <!-- upload pic-->
+        <div class="col-12">
+            <dl>
+                <label for="inputPic" class="form-label">Recipe Image</label>
+                <input type="file" name="file" class="form-control" autocomplete="off" required>
+            </dl>
+        </div>
+        
+        <div class="col-12">
+            <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Submit Recipe</button>
+        </div>
+    </form>
+
+{% endblock %}
