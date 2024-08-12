@@ -1,7 +1,8 @@
 # eRecipes
 
 #### Introduction:
-My final project is a web app that i made using Flask, Python, and SQL: eRecipes. It's a digital repository for culinary enthusiasts seeking to share and save their own recipes. It provides a platform for users to create and exchange their creations with eachother.
+My CS50 final project is a web app that i made using Flask, Python, and SQL: eRecipes. It's a virtual cookbook that provides a platform for users to create and exchange their own recipes with each other.
+
 
 #### Register, Log In, and Log Out
 The registration feature enables users to create individual accounts that they can log back into whenever they want. The log-out option ensures the secure exit from your account.
@@ -20,7 +21,6 @@ The database comprises four tables: "users," "recipes," "ingredients," and "step
 
 #### helpers.py
 The login_required function ensures that users are logged in before accessing any features. The apology function returns an apology picture (apology.html) in case of misuse by a user. The allowed_file function ensures that the image uploaded by the user has a correct extension for images (e.g., jpg, png).
-
 #### layout.html
 The layout template is my base for this app. It mainly includes the navbar as well as other functions that would be common in the other templates.
 
