@@ -23,7 +23,6 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 
-
 @app.after_request
 def after_request(response):
     #cache control for security (ex: if press back button after log out, no cache)
@@ -304,7 +303,7 @@ def search():
         
         # if name is entered
         if name:
-            search = db.execute("SELECT * FROM recipes WHERE name LIKE ?", (name + '%',)).fetchall()
+            search = db.execute("SELECT * FROM recipes WHERE name LIKE ?", ('%' + name + '%',)).fetchall()
             
             # if recipe is found
             if search:

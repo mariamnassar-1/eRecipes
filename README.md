@@ -1,15 +1,16 @@
 # eRecipes
+#### Video Demo:  https://www.youtube.com/watch?v=eg1XaeWvf58
 
-#### Introduction
-My CS50 final project is a web app that i made using Flask, Python, and SQL: eRecipes. It's a virtual cookbook that provides a platform for users to create and exchange their own recipes with each other.
+#### Introduction:
+My final project is a web app that i made using Flask, Python, and SQL: eRecipes. It's a digital repository for culinary enthusiasts seeking to share and save their own recipes. I personally see it as a virtual cookbook, as it provides a platform for users to create and exchange culinary creations with eachother, making it an ideal space to safeguard and celebrate meaningful family recipes.
 
 #### Register, Log In, and Log Out
-The registration feature enables users to create individual accounts that they can log back into whenever they want. The log-out option ensures the secure exit from your account. 
+The registration feature enables users to create individual accounts that they can log back into whenever they want. The log-out option ensures the secure exit from your account.
 
-#### Home Page
-The "Home" page enables users to browse and discover recipes shared by fellow cooking enthusiasts. Each recipe is presented with details such as the creator's username, recipe name, image, ingredients, steps, and additional information, including the cooking method. By clicking on a username, users can explore the creator's cookbook, gaining access to all their posted recipes. A search bar located at the top left allows easy retrieval of specific recipes by name.
+#### Home: Explore and Connect
+The "Home" page enables users to browse and discover recipes shared by fellow cooking enthusiasts. Each recipe is presented with essential details such as the creator's username, recipe name, image, ingredients, steps, and additional information, including the cooking method. By clicking on a username, users can explore the creator's cookbook, gaining access to all their posted recipes. A search bar located at the top left facilitates easy retrieval of specific recipes by name.
 
-#### My Cookbook
+#### My Cookbook: Personal Cooking Experience
 The "My Cookbook" feature provides a space to save your own recipes. This page displays all recipes you have added, mimicking the format of the home page except its only your own posts.
 
 #### Add Recipe
@@ -25,7 +26,10 @@ The login_required function ensures that users are logged in before accessing an
 The layout template is my base for this app. It mainly includes the navbar as well as other functions that would be common in all other templates.
 
 #### The Uploads Folder
-This folder contains the images uploaded by users for all recipes.
+this is where i store the images uploaded for the recipes. When a user uploads a recipe, it appears in the folder.
 
 #### styles.css
-I added some very simple design using css, including the blue background and the display of the recipe.
+I added some very simple design using css, including the blue background, the display of the recipe, and other small details such as margins and item alignment.
+
+#### Conclusion
+eRecipes caters to a specific audience, myself included. As someone who finds peace in baking as a favorite stress-relieving hobby, this app allows me to archive and revisit my favorite recipes at any time. While the appeal may not be universal, those who share this passion are likely to appreciate the unique value this platform offers.

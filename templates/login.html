@@ -5,15 +5,14 @@
 {% endblock %}
 
 {% block body %}
-    <p> Login to your account </p>
-
-    <form action="/login" method="post">
+    <h2 class="text-center login-title"> Login to your account </h2>
+    <form class="login-form" action="/login" method="post">
         <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+            <input autocomplete="off" autofocus class="form-control login-input" id="username" name="username" placeholder="Username" type="text">
         </div>
         <div class="mb-3">
-            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log In</button>
+            <input class="form-control login-input" id="password" name="password" placeholder="Password" type="password">
+            <button class="login-btn" type="submit">Log In</button>
         </div>
         
     </form>

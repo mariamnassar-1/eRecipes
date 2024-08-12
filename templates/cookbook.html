@@ -6,42 +6,43 @@
 
 {% block body %}
 
-    <h1> My Cookbook </h1>
+    <h2 class="recipe-heading"> My Cookbook </h2>
     <br>
-    {% for recipe_dict in recipe_list %}
+    <div class="recipe-wrapper">
+        {% for recipe_dict in recipe_list %}
+            <div class="container">
+                <br>
+                <!-- image -->
+                <img src= "{{ recipe_dict.image}}" class="recipe_img" alt="{{recipe_dict.name}}">
 
-        <div class="container">
+                <!-- name -->
+                <h2> {{ recipe_dict.name }} </h2>
+
+                <h4>Ingredients </h4>
+                <ol>
+                    {% for ingredient in recipe_dict.ingredients %}
+                        <!-- ingredients -->
+                        <li> <h6> {{ ingredient.name }}: {{ ingredient.amount }} </h6> </li>
+                    {% endfor %}
+                </ol>
+                
+                <h4>Steps </h4>
+                <ol>
+                    {% for step in recipe_dict.steps %}
+                        <!-- steps -->
+                        <li> <h6> {{ step.step }} </h6> </li>
+                    {% endfor %}
+                </ol>
+
+                <h4> Details </h4>
+                <ul>
+                    <li> <h6> Meal type: {{ recipe_dict.type }} </h6> </li>
+                    <li> <h6> Cook method: {{ recipe_dict.cook }} </h6> </li>
+                </ul>
+                <br>
+            </div>
             <br>
-            <!-- image -->
-            <img src= "{{ recipe_dict.image}}" class="recipe_img" alt="{{recipe_dict.name}}">
-
-            <!-- name -->
-            <h2> {{ recipe_dict.name }} </h2>
-
-            <h4>Ingredients </h4>
-            <ol>
-                {% for ingredient in recipe_dict.ingredients %}
-                    <!-- ingredients -->
-                    <li> <h6> {{ ingredient.name }}: {{ ingredient.amount }} </h6> </li>
-                {% endfor %}
-            </ol>
-            
-            <h4>Steps </h4>
-            <ol>
-                {% for step in recipe_dict.steps %}
-                    <!-- steps -->
-                    <li> <h6> {{ step.step }} </h6> </li>
-                {% endfor %}
-            </ol>
-
-            <h4> Details </h4>
-            <ul>
-                <li> <h6> Meal type: {{ recipe_dict.type }} </h6> </li>
-                <li> <h6> Cook method: {{ recipe_dict.cook }} </h6> </li>
-            </ul>
-            <br>
-        </div>
-        <br>
-    {% endfor %}
+        {% endfor %}
+    </div>
 
 {% endblock %}
