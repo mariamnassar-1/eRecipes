@@ -1,5 +1,4 @@
 # eRecipes
-#### Video Demo:  https://www.youtube.com/watch?v=eg1XaeWvf58
 
 #### Introduction:
 My final project is a web app that i made using Flask, Python, and SQL: eRecipes. It's a digital repository for culinary enthusiasts seeking to share and save their own recipes. I personally see it as a virtual cookbook, as it provides a platform for users to create and exchange culinary creations with eachother, making it an ideal space to safeguard and celebrate meaningful family recipes.
